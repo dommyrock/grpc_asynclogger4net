@@ -11,6 +11,11 @@ dotnet add package Easy.Logger -v 4.0.0
 dotnet add package BenchmarkDotNet
 ```
 
+Loggs are currently exported to path:
+```
+.\grpc_asynclogger4net\bin\Debug\net7.0\Logs
+```
+
 To enable Grpc server reflection we need additional nuget
 ```csharp
 <PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.51.0" />
@@ -35,8 +40,8 @@ app.MapGrpcService<BenchmarkingService>();
 ```powershell
 dotnet add package Microsoft.AspNetCore.Grpc.JsonTranscoding
 ```
-> Aditional Service configurations can be found here
-https://learn.microsoft.com/en-us/aspnet/core/grpc/json-transcoding?view=aspnetcore-7.0#usage
+Additional Service configurations can be found here
+- https://learn.microsoft.com/en-us/aspnet/core/grpc/json-transcoding?view=aspnetcore-7.0#usage
 
 #### Usefull docs
 https://learn.microsoft.com/en-us/aspnet/core/fundamentals/host/web-host?view=aspnetcore-7.0
