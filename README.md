@@ -18,17 +18,25 @@ To enable Grpc server reflection we need additional nuget
 ```powershell
 dotnet add package Grpc.AspNetCore.Server.Reflection
 ```
-> With server reflection configured we can pull protobuff schema defitnitions to Postman
 
 Additionaly these DI code configurations are needed
 ```csharp
 //Services
 builder.Services.AddGrpcReflection();
-//Http Pipeline
+//Http Pipeline middleware
 app.MapGrpcService<BenchmarkingService>();
 ```
+> With server reflection configured we can pull protobuff schema defitnitions to Postman
 ![image](https://user-images.githubusercontent.com/32032778/213866486-980b37b8-6f8f-4a40-918c-0edbd8506d86.png)
 
+#### Json transcoding 
+> This enables our clients to call our api either through Grpc or Http 
+
+```powershell
+dotnet add package Microsoft.AspNetCore.Grpc.JsonTranscoding
+```
+> Aditional Service configurations can be found here
+https://learn.microsoft.com/en-us/aspnet/core/grpc/json-transcoding?view=aspnetcore-7.0#usage
 
 #### Usefull docs
 https://learn.microsoft.com/en-us/aspnet/core/fundamentals/host/web-host?view=aspnetcore-7.0
@@ -40,4 +48,7 @@ https://blog.hackajob.co/how-to-log-in-asp-net-core-web-apps-using-log4net/
 #### Demos
 https://www.youtube.com/watch?v=et_2NBk4N4Y,
 https://www.youtube.com/watch?v=hp5FTB7PI9s
+
+#### Http2 middleware Perf fix (replacement for locks = queue)
+https://youtu.be/et_2NBk4N4Y?t=781
 
