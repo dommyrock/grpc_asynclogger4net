@@ -11,7 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.4" />
+    <PackageReference Include="Easy.Logger" Version="4.0.0" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.49.0" />
+    <PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.51.0" />
   </ItemGroup>
 
 </Project>
